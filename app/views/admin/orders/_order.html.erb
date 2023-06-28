@@ -1,0 +1,41 @@
+<div id="<%= dom_id order %>">
+  <p>
+    <strong>Status:</strong>
+    <%= Order.human_attribute_name("status.#{order.status}") %>
+  </p>
+  <p>
+    <strong>Tipo de pagamento:</strong>
+    <%= order.credit_card %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= order.email %>
+  </p>
+  <% WishItem.all.each do |wish_item| %>
+    <p>
+      <strong>Nome do Produto:</strong>
+      <%= wish_item.product.name %>
+    </p>
+    <p>
+      <strong>Preço:</strong>
+      <%= wish_item.product.price %>
+    </p>
+  <% end %>
+  <p>
+    <strong>Total:</strong>
+    <% price_total = WishItem.all.map{|item| item.product.price }.sum %>
+    <%= number_to_currency( price_total) %>
+  </p>
+
+  <p>
+    <strong>Usuário:</strong>
+    <%= order.first_name %>
+  </p>
+
+  <p>
+    <strong>Endereço:</strong>
+    <%= order.street %>
+  </p>
+
+</div>

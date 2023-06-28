@@ -1,0 +1,42 @@
+pt-BR:
+
+  activerecord:
+    model:
+      order:
+        one: Pedido
+        other: Pedidos
+
+    attributes:
+      order:
+        first_name: Nome
+        last_name: Sobrenome
+        email: Email
+        cpf: CPF
+        phone: Telefone
+        cellphone: Celular
+        street: Endereço
+        district: Bairro
+        number: Número
+        complement: Complemento
+        brazil_country: Pais
+        city: Cidade
+        state: Estado
+        zip_number: CEP
+        debit_card: Cartão de Debito
+        credit_card: Cartão de Crédito
+        billet: Boleto Bancário
+        pix: PIX
+        credit_card_number: Número do Cartão
+        credit_card_expired_date: Data de expiração
+        credit_card_name: Nome do Cartão
+        credit_card_code: CVV
+        status: Status
+        total_amount: Valor total
+        payment_type: Tipo de pagamento
+      order/status:
+        processing_order: Pendente
+        processing_error: Error no processamento
+        waiting_payment: Aguardando pagamento
+        payment_accepted: Pagamento aceito
+        payment_denied: Pagamento negado
+        finished: Finalizado

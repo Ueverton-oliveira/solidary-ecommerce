@@ -1,0 +1,44 @@
+
+<h1>Carrinho de Compras</h1>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <th>Produtos</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Ação</th>
+
+          </thead>
+          <tbody>
+          <% @wish_items.each do |wish_item| %>
+            <tr>
+              <td>
+                <div class="product-image">
+                  <%#= image_tag wish_item.product.image.variant(:small_thumb), class: 'card-img-top' if wish_item.product.image.present? %>
+                </div>
+                <div class="product-name">
+                  <%= wish_item.product.name %>
+                </div>
+
+              </td>
+              <td><%= number_to_currency(wish_item.product.price) %></td>
+              <td><%= '1' %></td>
+              <td><%= number_to_currency(wish_item.product.price) %></td>
+              <td><%= link_to "x", wish_item_path(wish_item), method: :delete, class: 'btn btn-danger', data: {turbo_method: :delete, turbo_confirm: 'Deseja realmente exlcuir?'} %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <%= link_to "Prosseguir para Checkout", new_order_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

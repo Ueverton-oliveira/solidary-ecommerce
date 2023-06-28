@@ -1,0 +1,38 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="card">
+          <div class="card-body">
+            <%= render 'layouts/shared/flash' if flash.present? %>
+            <h2>Dúvidas e Reclamações</h2>
+            <% if @claims.any? %>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Assunto</th>
+                  <th scope="col">Usuário</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @claims.each do |claim| %>
+                  <tr>
+                    <td><%= claim.name %></td>
+                    <td><%= claim.subject %></td>
+                    <td><%= claim.user.name %></td>
+                    <td>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            <% else %>
+              <p>Nenhuma dúvida ou reclamação</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

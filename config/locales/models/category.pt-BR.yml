@@ -1,0 +1,13 @@
+pt-BR:
+
+  activerecord:
+    model:
+      category:
+        one: Categoria
+        other: Categorias
+
+    attributes:
+      category:
+        name: Nome
+        position: Posição
+

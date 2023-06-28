@@ -1,0 +1,19 @@
+pt-BR:
+
+  activerecord:
+    model:
+      product:
+        one: Produto
+        other: Produtos
+
+    attributes:
+      product:
+        name: Nome
+        image: Imagem
+        description: Descrição
+        price: Preço
+        publish: Público
+        promo: Promoção
+        promo_price: Valor considerado no desconto
+        category: Categoria
+

@@ -1,0 +1,43 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <%= render 'settings/menu' %>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card">
+          <div class="card-body">
+            <%= render 'layouts/shared/flash' if flash.present? %>
+            <h2>Dúvidas e Reclamações</h2>
+            <% if @claims.any? %>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Assunto</th>
+                  <th scope="col">Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @claims.each do |claim| %>
+                  <tr>
+                    <td><%= claim.name %></td>
+                    <td><%= claim.subject %></td>
+                    <td>
+                      <%= link_to "Excluir", claim_path(claim), method: :delete, class: 'btn btn-danger', data: {turbo_method: :delete, turbo_confirm: 'Deseja realmente exlcuir?'} %>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            <% else %>
+            <% end %>
+            <%= link_to "Nova reclamação ou dúvida", new_claim_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<div id="<%= dom_id product %>">
+  <p>
+    <strong>Name:</strong>
+    <%= product.name %>
+  </p>
+
+  <p>
+    <strong>Imagem:</strong>
+    <%= image_tag product.image.variant(:thumb) %>
+  </p>
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= product.description %>
+  </p>
+
+  <p>
+    <strong>Preço:</strong>
+    <%= product.price %>
+  </p>
+
+  <p>
+    <strong>Ativo:</strong>
+    <%= product.publish %>
+  </p>
+
+</div>

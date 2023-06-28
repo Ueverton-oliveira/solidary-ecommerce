@@ -1,0 +1,28 @@
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: ecommerce_test
+  host: localhost
+  username: root
+  password: 123456
+  timeout: 5000
+
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  database: ecommerce_development
+  host: localhost
+  username: root
+  password: 123456
+  timeout: 5000
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: ecommerce_production
+  host: localhost
+  username: root
+  password: root
+  timeout: 5000
