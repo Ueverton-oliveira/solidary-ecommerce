@@ -23,6 +23,7 @@ class Order < ApplicationRecord
     elsif pix == true
       'PIX'
     end
+
   end
 
   private
