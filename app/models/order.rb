@@ -24,7 +24,6 @@ class Order < ApplicationRecord
       'PIX'
     end
 
-
   end
 
   private
