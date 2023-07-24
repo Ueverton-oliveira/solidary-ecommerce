@@ -4,8 +4,14 @@ class Order < ApplicationRecord
   before_save :set_subtotal
   before_validation :set_default_status, on: :create
 
-  enum status: { processing_order: 1, processing_error: 2, waiting_payment: 3,
-                 payment_accepted: 4, payment_denied: 5, finished: 6 }
+  enum status: {
+    processing_order: 1,
+    processing_error: 2,
+    waiting_payment: 3,
+    payment_accepted: 4,
+    payment_denied: 5,
+    finished: 6
+  }
 
   include LocalizedEnumerable
 
@@ -23,7 +29,6 @@ class Order < ApplicationRecord
     elsif pix == true
       'PIX'
     end
-
   end
 
   private
