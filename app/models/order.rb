@@ -13,6 +13,7 @@ class Order < ApplicationRecord
     finished: 6
   }
 
+
   include LocalizedEnumerable
 
   def subtotal
