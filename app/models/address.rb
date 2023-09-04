@@ -8,6 +8,5 @@ class Address < ApplicationRecord
 
   # validation
   # --
-
   validates :name, presence: true
 end
