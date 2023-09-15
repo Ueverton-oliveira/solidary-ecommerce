@@ -3,7 +3,6 @@
 class Address < ApplicationRecord
   # association
   # --
-
   belongs_to :user
 
   # validation
